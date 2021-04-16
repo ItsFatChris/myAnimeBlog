@@ -1,4 +1,21 @@
+<?php
+include 'dbo.php';
+include 'include.php';
 
+if( $_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $conn = OpenCon();
+    
+    
+
+    
+    CloseCon($conn);
+
+
+}
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -23,8 +40,25 @@
 
 </head>
 <body>
-<input id='thistag' placeholder="Enter some text" name="name"/>
+<input id='thistag' placeholder="Enter anime title" name="name"/>
+<button id="myBtn">Green</button>
 <p id="values"></p>
+
+<form>
+<p>Enter your article title</p>
+  <textarea id='title'></textarea>
+  <p>Enter your article body</p>
+  <textarea id='article'></textarea>
+
+
+
+
+
+</form>
+
+
+
+
 
 
 
@@ -43,8 +77,8 @@
 const input = document.querySelector('input');
 const log = document.getElementById('values');
 
-
-input.addEventListener('input', updateValue);
+document.getElementById("myBtn").addEventListener("click", updateValue);
+//input.addEventListener('input', updateValue);
 
 function updateValue(e) {
     var text = document.getElementById('thistag').value;
