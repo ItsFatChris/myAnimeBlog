@@ -4,12 +4,23 @@ include 'include.php';
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $conn = OpenCon();
-    
-    
 
-    
+  $animeID = $_POST['sel'];
+  $userID = $_SESSION["userID"];
+  $title = $_POST['title'];
+  $body = $_POST['article'];
+  $starRating = 5;
+
+  echo "<p>" . $animeID . " " . $userID . " " . $title . " " . $body . " " . $starRating . "</p>";
+
+    $conn = OpenCon();
+
+    $stmt = $conn->prepare("INSERT INTO ARTICLE (articleTitle, userID, animeID, body, starRating, date) VALUES(?, ?, ?, ?, ?, now())");
+    $stmt->bind_param("siisi", $title, $userID, $animeID, $body, $starRating);
+    $stmt->execute();
+
     CloseCon($conn);
+    
 
 
 }
@@ -42,13 +53,15 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
 <input id='thistag' placeholder="Enter anime title" name="name"/>
 <button id="myBtn">Green</button>
-<p id="values"></p>
 
-<form>
+
+<form action="" method="post" >
+<p id="values"></p>
 <p>Enter your article title</p>
-  <textarea id='title'></textarea>
+  <textarea name='title'></textarea>
   <p>Enter your article body</p>
-  <textarea id='article'></textarea>
+  <textarea name='article'></textarea>
+  <input type="submit" name="submit" value="Sign Up" />
 
 
 

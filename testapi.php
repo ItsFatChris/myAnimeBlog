@@ -16,7 +16,7 @@ echo $_GET['callback']."(".json_encode($arr).");";
 //use easy http request
 //$json = file_get_contents("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka");
 //https://www.thecocktaildb.com/api/json/v1/1/random.php
-$q=$_GET["q"];
+$q=urlencode($_GET["q"]);
 
 $json = file_get_contents("https://api.jikan.moe/v3//search/anime/?q=$q&limit=3'");
 
