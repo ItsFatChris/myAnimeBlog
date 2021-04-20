@@ -29,7 +29,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
                 $_SESSION["username"] = "$username";
                 $_SESSION["userID"] = $userID;
                 $_SESSION["loggedIn"] = true;
-
+                CloseCon($conn);
                             header("location: index.php");
             } else {
                 echo "<p>Loging unsuccessful</p>";

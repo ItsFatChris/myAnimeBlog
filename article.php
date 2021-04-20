@@ -51,10 +51,11 @@
     
     echo "<p>ArticleID: " . $articleID . "<br>Article Title: " . $articleTitle . "<br> UserID: " . $userID . "<br> AnimeID:" . $animeID . "<br>Body: <br>" .  nl2br($body) . "<br><br>User Rating:" . $starRating . "<br>Date Submitted:" . $date . "</p>";
     $stmt->close();
+    CloseCon($conn);
     } else {
         echo "<p>No results found</p>";
     }
-    CloseCon($conn);
+    
 
 
 

@@ -44,9 +44,10 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["userID"] = $userID;
                             $_SESSION["loggedIn"] = true;
 
+                            CloseCon($conn);
                             header("location: index.php");
                         
-        
+                            
         
                 
                         } 
