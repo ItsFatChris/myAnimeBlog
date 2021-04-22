@@ -42,7 +42,7 @@
     $stmt->execute();
     
     
-    $result = $stmt->bind_result($articleID, $articleTitle, $userID, $animeID, $starRating,$body, $date);
+    $result = $stmt->bind_result($articleID, $articleTitle, $userID, $animeID, $starRating,$body, $date, $imageURL, $animeName);
     $stmt->fetch();
     if($articleID != ""){
 

@@ -1,15 +1,11 @@
 <?php
 //home page doesnt do anything yet
 include 'include.php';
+include 'dbo.php';
+function createThumb($row) {
 
 
-
-
-
-
-
-
-
+}
 
 ?>
 
@@ -48,7 +44,49 @@ include 'include.php';
    <h1> Home Page </h1>
    <?php
     include "topbar.php";
+
+    $conn = OpenCon();
+    $stmt = "SELECT * FROM article ORDER BY date DESC LIMIT 10";
+
+    if($result = mysqli_query($conn, $stmt)){
+        if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "<th>Picture</th>";
+                echo "<th>Title/LinkToArticle</th>";
+                echo "<th>UserName</th>";
+                echo "<th>StarRating</th>";
+                echo "<th>AnimeName</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            $link = "article.php/?q=" . $row['articleID'];
+            //<a href=$link >$row['articleTitle']</a>
+
+
+
+            //"https://api.jikan.moe/v3/anime/"
+            echo "<tr>";
+                echo "<td> <img src=\"" . $row['imageURL']. "\" alt=\"Girl in a jacket\"> " ."</td>";
+                echo "<td>" . "<a href=" . $link . ">" . $row['articleTitle'] . "</a> ". "</td>";
+                echo "<td>" . $row['userID'] . "</td>";
+                echo "<td>" . $row['starRating'] . "</td>";
+                echo "<td>" . $row['animeName'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    }
+}
+
+
+
+
+
+
+
     ?>
 
 </body>
+
 </html>

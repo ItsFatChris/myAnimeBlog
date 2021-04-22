@@ -16,12 +16,15 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
   $body = nl2br($_POST['article']);
   $starRating = 5;
 
+  $json = file_get_contents("https://api.jikan.moe/v3/anime/$animeID");
+  $data = json_decode($json, true);
+
   echo "<p>" . $animeID . " " . $userID . " " . $title . " " . $body . " " . $starRating . "</p>";
 
     $conn = OpenCon();
 
-    $stmt = $conn->prepare("INSERT INTO ARTICLE (articleTitle, userID, animeID, body, starRating, date) VALUES(?, ?, ?, ?, ?, now())");
-    $stmt->bind_param("siisi", $title, $userID, $animeID, $body, $starRating);
+    $stmt = $conn->prepare("INSERT INTO ARTICLE (articleTitle, userID, animeID, body, starRating, imageURL, animeName, date) VALUES(?, ?, ?, ?, ?, ?, ?, now())");
+    $stmt->bind_param("siisiss", $title, $userID, $animeID, $body, $starRating, $data["image_url"], $data["title"]);
     $stmt->execute();
 
     CloseCon($conn);
