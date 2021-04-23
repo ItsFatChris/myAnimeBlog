@@ -1,16 +1,11 @@
 <div>
 
-   <p> <a href="./signup.php"> Sign Up </a> </p>
-   <p> <a href="./login.php"> Login </a> </p>
-   <p> <a href="logout.php"> LogOut </a> </p>
-   <p> <a href="index.php"> Home </a> </p>
-   <p> <a href="submitArticle.php"> Submit</a> </p>
-   <p> <a href="article.php?q=6"> Article</a> </p>
-
-
-
-
-
+   <p> <a href="//localhost:8000/signup.php"> Sign Up </a> </p>
+   <p> <a href="//localhost:8000/login.php"> Login </a> </p>
+   <p> <a href="//localhost:8000/logout.php"> LogOut </a> </p>
+   <p> <a href="//localhost:8000/index.php"> Home </a> </p>
+   <p> <a href="//localhost:8000/submitArticle.php"> Submit</a> </p>
+   <p> <a href="//localhost:8000/article.php?q=6"> Article</a> </p>
 
 
 </div>

@@ -25,6 +25,7 @@
 
 ?>
    <h1> sign up </h1>
+   
    <?php
    include 'dbo.php';
    include 'include.php';
@@ -33,6 +34,8 @@
         echo "<h2> Username: " . $_SESSION["username"] . "</h2>";
         }
 
+    $matchFound = (isset($_GET["q"]));
+    if($matchFound) {
     $q=urlencode($_GET["q"]);
 
     $conn = OpenCon();
@@ -56,7 +59,9 @@
         echo "<p>No results found</p>";
     }
     
-
+} else {
+    header("location: //localhost:8000/index.php");
+}
 
 
 
