@@ -36,32 +36,32 @@
 
     $matchFound = (isset($_GET["q"]));
     if($matchFound) {
-    $q=urlencode($_GET["q"]);
+        $q=urlencode($_GET["q"]);
 
-    $conn = OpenCon();
+        $conn = OpenCon();
 
-    $stmt = $conn->prepare("SELECT * FROM ARTICLE  WHERE articleID = ?");
-    $stmt->bind_param("s", $q);
-    $stmt->execute();
-    
-    
-    $result = $stmt->bind_result($articleID, $articleTitle, $userID, $animeID, $starRating,$body, $date, $imageURL, $animeName);
-    $stmt->fetch();
-    if($articleID != ""){
+        $stmt = $conn->prepare("SELECT * FROM ARTICLE  WHERE articleID = ?");
+        $stmt->bind_param("s", $q);
+        $stmt->execute();
+        
+        
+        $result = $stmt->bind_result($articleID, $articleTitle, $userID, $animeID, $starRating,$body, $date, $imageURL, $animeName);
+        $stmt->fetch();
+        if($articleID != ""){
 
 
 
-    
-    echo "<p>ArticleID: " . $articleID . "<br>Article Title: " . $articleTitle . "<br> UserID: " . $userID . "<br> AnimeID:" . $animeID . "<br>Body: <br>" .  nl2br($body) . "<br><br>User Rating:" . $starRating . "<br>Date Submitted:" . $date . "</p>";
-    $stmt->close();
-    CloseCon($conn);
-    } else {
-        echo "<p>No results found</p>";
+        
+        echo "<p>ArticleID: " . $articleID . "<br>Article Title: " . $articleTitle . "<br> UserID: " . $userID . "<br> AnimeID:" . $animeID . "<br>Body: <br>" .  nl2br($body) . "<br><br>User Rating:" . $starRating . "<br>Date Submitted:" . $date . "</p>";
+        $stmt->close();
+        CloseCon($conn);
+        } else {
+            echo "<p>No results found</p>";
+        }
+        
+        } else {
+            header("location: //localhost:8000/index.php");
     }
-    
-} else {
-    header("location: //localhost:8000/index.php");
-}
 
 
 

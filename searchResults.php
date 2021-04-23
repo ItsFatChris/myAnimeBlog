@@ -17,7 +17,7 @@ for($i =0; $i < $size; $i++){
 
 $sql = "SELECT * FROM article WHERE animeID IN ('" 
 . implode("','", $array) 
-     . "')";
+     . "') ORDER BY date DESC LIMIT 10";
 
 
 $conn = OpenCon();
