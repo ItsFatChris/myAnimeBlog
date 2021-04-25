@@ -1,0 +1,47 @@
+a.navbar-brand {
+    color: rebeccapurple !important;
+    font-family: 'Chango';
+    font-size:20px;
+}
+
+
+a.nav-link{
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align:right;
+    vertical-align:top;
+    font-size: 14px;
+}
+
+h2{
+    background-color: darkorchid;
+}
+h2 nav#secondaryNav ul li{
+    display: inline;
+    
+}
+h2 nav#secondaryNav ul li a{
+    font-size: 14px;
+    display:inline;
+    color: white;
+    position: relative;
+}
+
+figure{
+    width: 40%;
+}
+
+table {
+    width:40%;
+}
+table, th, td{
+    border:1px solid darkorchid;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}

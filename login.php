@@ -2,6 +2,7 @@
 //allows for login of users
 include 'dbo.php';
 include 'include.php';
+include "topbar.php";
 $loginFail = false;
 
 if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
@@ -29,7 +30,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
                 $_SESSION["username"] = "$username";
                 $_SESSION["userID"] = $userID;
                 $_SESSION["loggedIn"] = true;
-
+                CloseCon($conn);
                             header("location: index.php");
             } else {
                 echo "<p>Loging unsuccessful</p>";
@@ -68,13 +69,13 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])){
 
 
 
-
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Chapter 5</title>
+   <title>Anime General</title>
  
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -87,45 +88,65 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])){
    <link rel="stylesheet" href="styles.css" />
 
 </head>
+-->
 <body>
     <?php
-    if($_SESSION["username"] != ""){
-    echo "<h2> Username: " . $_SESSION["username"] . "</h2>";
-    echo "<h2> UserID: " . $_SESSION["userID"] . "</h2>";
-    }
+        if($_SESSION["username"] != "")
+            {
+                  echo "<h2> Username: " . $_SESSION["username"] . "</h2>";
+                 echo "<h2> UserID: " . $_SESSION["userID"] . "</h2>";
+            }
 
 
-?>
-<h1> Log IN </h1>
-    <?php
-    include "topbar.php";
     ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-   <form action="" method="post" >
+<div class = "loginSignup">
+<h1>Login as an Existing User</h1>
 
-                        
-   <label>Username</label>
-                        </br>
-                        <input type = "text" name="username"></textarea>
-                        </br>
-                        <label>Password</label>
-                        </br>
-                        <input type = "password" name="password"></textarea>
-                        </br>
-                        <br/>
-                        <input type="submit" name="login" value="Login" />
+   <form action="" method="post" >    
+       <div class = "username">              
+            <label>Username</label>
+                <br>
+                    <input type = "text" name="username">
+                <br>
+        </div>
+        <div class = "password">
+            <label>Password</label>
+                <br>
+            <input type = "password" name="password">
+        </div>
+                <br>
+                <br>
+            <input type="submit" name="login" value="Login" />
 
-                    </form>
-            <form action="" method="post" >
+    </form>
+    <form action="" method="post" >
+        <?php 
+            if($loginFail)
+                { 
+                    echo "<p>Either Username or Password are incorrect</p>";
+                } 
+        ?>
+<h3>New here? Click <a href = "//localhost:8000/signup.php">here </a> to sign-up!</h3>
+</div>
 
+<!--
                         
                         
                         <br/>
                         <input type="submit" name="logout" value="Log Out" />
 
                     </form>
-                    <?php if($loginFail){ echo "<p>Either Username or Password are incorrect</p>";} ?>
-  
+
+-->
 
 </body>
 </html>

@@ -16,6 +16,7 @@ if( !isset($_SESSION["init"]) ) {
     
 
 }
+echo "<p>" . $_SESSION["username"] . "</p>";
 
 
 ?>

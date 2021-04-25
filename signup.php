@@ -1,6 +1,7 @@
 <?php
 include 'dbo.php';
 include 'include.php';
+include "topbar.php";
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -44,9 +45,10 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["userID"] = $userID;
                             $_SESSION["loggedIn"] = true;
 
+                            CloseCon($conn);
                             header("location: index.php");
                         
-        
+                            
         
                 
                         } 
@@ -78,63 +80,46 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Chapter 5</title>
- 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css" />
-
-</head>
 <body>
+
 <?php
-    if($_SESSION["username"] != ""){
-    echo "<h2> Username: " . $_SESSION["username"] . "</h2>";
-    }
-
-
+  //  if($_SESSION["username"] != ""){
+  //  echo "<h2> Username: " . $_SESSION["username"] . "</h2>";
+  //  }
 ?>
-   <h1> sign up </h1>
-   <?php
-    include "topbar.php";
-    ?>
-   <form action="" method="post" >
 
-                        <label>Username</label>
-                        </br>
-                        <input type = "text" name="username"></input>
-                        <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($usernameError != ""){ echo "<p>" . $usernameError . "</p>";}} ?>
-                        </br>
-                        <label>Password</label>
-                        </br>
-                        <input type = "password" name="password"></input>
-                        <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($passwordError != ""){ echo "<p>" . $passwordError . "</p>";}} ?>
-                        </br>
-                        <label>Confirm Password</label>
-                        </br>
-                        <input type = "password" name="confirmPassword"></input>
-                        <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($confirmPasswordError!= ""){ echo "<p>" . $confirmPasswordError. "</p>";}} ?>
-                        <br/>
-                        <input type="submit" name="submit" value="Sign Up" />
 
-                    </form>
-  
+<div class = "loginSignup">
+   <h1>Sign-up as an Existing User</h1>
+    <form action="" method="post" >
+    <div class = "username">  
+        <label>Username</label>
+            </br>
+            <input type = "text" name="username"></input>
+            <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($usernameError != ""){ echo "<p>" . $usernameError . "</p>";}} ?>
+    </div>
+            </br>
+    <div class = "password">  
+        <label>Password</label>
+            </br>
+            <input type = "password" name="password"></input>
+            <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($passwordError != ""){ echo "<p>" . $passwordError . "</p>";}} ?>
+    </div>
+            </br>
+    <div class = "confirmPassword">  
+        <label>Confirm Password</label>
+            </br>
+            <input type = "password" name="confirmPassword"></input>
+            <?php if( $_SERVER["REQUEST_METHOD"] == "POST"){ if($confirmPasswordError!= ""){ echo "<p>" . $confirmPasswordError. "</p>";}} ?>
+    </div>
+            <br/>
+    
+    <div class = "signupActions">
+            <input type="submit" name="submit" value="Sign Up" />
+    <h3>Already have an account? Click <a href = "//localhost:8000/login.php">here </a> to login!</h3>
+    </div>
+    </form>
+</div>
 
 </body>
 </html>

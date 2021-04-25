@@ -1,0 +1,245 @@
+.body, html{
+    height: 100%;
+    margin: 0;
+}
+
+.bg{
+    background-image: url("http://puu.sh/HBqqL/9fb742e477.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -200;
+}
+/***************************************************************************************************************************/
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+a.navbar-brand {
+    color: rebeccapurple !important;
+    font-family: 'Chango';
+    font-size:30px;
+}
+
+
+.nav-link{
+    display: inline;
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align:right;
+    vertical-align:top;
+    font-size: 14px;
+}
+/***************************************************************************************************************************/
+h2{
+    background-color:  darkorchid;
+    position: fixed;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px;
+    width: 100%;
+    top :60px;
+    right: 0;
+    text-align: right;
+    z-index: 10;
+    
+}
+h2 nav#secondaryNav ul li{
+    display: inline;
+
+}
+h2 nav#secondaryNav ul li a{
+    right: 10px;
+    font-size: 14px;
+    color: white;
+
+}
+/***************************************************************************************************************************/
+
+
+/***************************************************************************************************************************/
+
+/*SPECIFIC TO about.php*/
+
+.aboutContents > h1 {
+    font-size: 35px;
+    position: fixed;
+    left :20px;
+    top :4em;
+}
+.aboutContents > img{
+    display: block;
+    position: absolute;
+    left : 30em;
+    bottom: 0px;
+    width : 30%;
+    height: auto;
+}
+
+
+.aboutContents > p {
+    font-size: 18px;
+    position: fixed;
+    left :15px;
+    top :12em;
+    text-indent: 50px;
+    margin-left: 7.5em;
+    margin-right: 7.5em;
+}
+/***************************************************************************************************************************/
+
+.headline-Container > form {
+    position: relative;
+    left:30px;
+    
+}
+
+.user-Given-Score > form {
+    position: relative;
+    left:30px;
+}
+
+.Explain > form {
+    position: relative;
+    left:30px;   
+}
+
+.submitReview {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.submitReview:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+/***************************************************************************************************************************/
+figure{
+    width: 40%;
+}
+
+table {
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+table, th, td{
+    border:1px solid darkorchid;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+/***************************************************************************************************************************/
+
+.loginSignup {
+    position: fixed;
+    
+}
+
+.loginSignup h1 {
+    text-align:center;
+    position: inherit;
+    font-size: 30px;
+    top: 150px;
+    width: 100%;
+}
+
+.loginSignup form  .username label{
+    position: fixed;
+    left: 27em;
+    top: 10.5em;
+    font-size: 22px;
+    font-style: italic;
+    color : #A9A9A9;
+    width: 100%;
+}
+
+.loginSignup form  .username input{
+    position: fixed;
+    left: 26em;
+    top: 12em;
+    font-size: 22px;
+}
+
+.loginSignup form  .password label{
+    position: fixed;
+    left: 27em;
+    top: 15.5em;
+    font-size: 22px;
+    font-style: italic;
+    color : #A9A9A9;
+    width: 100%;
+}
+.loginSignup form  .password input{
+    position: fixed;
+    left: 26em;
+    top: 17em;
+    font-size: 22px;
+}
+
+
+
+.loginSignup form .confirmPassword label{
+    position: fixed;
+    left: 27em;
+    top: 19.5em;
+    font-size: 22px;
+    font-style: italic;
+    color : #A9A9A9;
+    width: 100%;
+}
+
+.loginSignup form .confirmPassword input{
+    position: fixed;
+    left: 26em;
+    top: 21em;
+    font-size: 22px;
+}
+
+.loginSignup input{
+    position: fixed;
+    top: 27.5em;
+    left: 34em;
+}
+
+.loginSignup form .signupActions input{
+    position: fixed;
+    top: 32.5em;
+    left: 34em;
+}
+
+.loginSignup form .signupActions h3{
+    text-align:center;
+    position: fixed;
+    font-size: 30px;
+    top: 18.5em;
+    width: 100%; 
+}
+.loginSignup h3 {
+    text-align:center;
+    position: fixed;
+    font-size: 30px;
+    top: 16em;
+    width: 100%;
+}
