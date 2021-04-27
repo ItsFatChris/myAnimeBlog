@@ -2,7 +2,7 @@
 <?php
  include 'dbo.php';
  include 'include.php';
-  include "topbar.php";
+ include "topbar.php";
 
 $q=urlencode($_GET["q"]);
 

@@ -1,7 +1,7 @@
 <?php
 include 'dbo.php';
 include 'include.php';
-
+include "topbar.php";
 
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
@@ -16,7 +16,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,9 +38,10 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
     </script>
 
 </head>
+-->
 <body>
 <?php 
-include "topbar.php";
+
 ?>
 
 
