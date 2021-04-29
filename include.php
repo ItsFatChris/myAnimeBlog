@@ -18,5 +18,18 @@ if( !isset($_SESSION["init"]) ) {
 }
 echo "<p>" . $_SESSION["username"] . "</p>";
 
+function firstSentence($content)
+{
+    $pos = strpos($content, ".");
+
+    if($pos === false)
+        {
+            return $content;
+        }
+    else
+        {
+            return substr($content, 0, $pos+1);
+        }
+}
 
 ?>

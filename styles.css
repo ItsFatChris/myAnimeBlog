@@ -48,7 +48,8 @@ h2{
     padding-bottom: 0px;
     border-bottom: 0px;
     width: 100%;
-    top :60px;
+    height: 32px;
+    top :70px;
     right: 0;
     text-align: right;
     z-index: 10;
@@ -56,6 +57,8 @@ h2{
 }
 h2 nav#secondaryNav ul li{
     display: inline;
+    font-size: 19px;
+    color :cornsilk;
 
 }
 h2 nav#secondaryNav ul li a{
@@ -63,93 +66,93 @@ h2 nav#secondaryNav ul li a{
     font-size: 14px;
     color: white;
 
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-/***************************************************************************************************************************/
-
-
 /***************************************************************************************************************************/
 
 /*SPECIFIC TO about.php*/
 
 .aboutContents > h1 {
     font-size: 35px;
-    position: fixed;
+    font-style:italic;
+    position: absolute;
     left :20px;
-    top :4em;
+    top :135px;
 }
 .aboutContents > img{
     display: block;
     position: absolute;
-    left : 30em;
+    height : 300px;
+    z-index: -10;
+    width :300px;
+    left : 600px;
     bottom: 0px;
-    width : 30%;
-    height: auto;
 }
 
 
 .aboutContents > p {
     font-size: 18px;
-    position: fixed;
+    position: absolute;
     left :15px;
-    top :12em;
+    top :216px;
     text-indent: 50px;
     margin-left: 7.5em;
     margin-right: 7.5em;
 }
+
+
 /***************************************************************************************************************************/
-
-.headline-Container > form {
-    position: relative;
-    left:30px;
-    
-}
-
-.user-Given-Score > form {
-    position: relative;
-    left:30px;
-}
-
-.Explain > form {
-    position: relative;
-    left:30px;   
-}
-
-.submitReview {
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.submitReview:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-/***************************************************************************************************************************/
-figure{
-    width: 40%;
-}
 
 table {
-    width:40%;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    min-width: 350px;
 }
 table, th, td{
     border:1px solid darkorchid;
     border-collapse: collapse;
+    padding: 5px;
+}
+/*Tried creating rounded edges*/
+/*
+tr:first-child{
+    border-radius: 6px 0 0 0;
 }
 
+tr:last-child{
+    border: 0 6px 0 0;
+}
+
+tr:only-child{
+    border-radius: 6px 6px 0 0;
+}*/
 th, td {
     padding: 5px;
+    font-size :18.5px;
     text-align: left;
+    padding: 5px;
 }
+
+.RecentReviewShowsHere table tbody tr td img{
+    display: block;
+    overflow: hidden;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    border-spacing: 0px;
+    border-radius: 5px;
+}
+
+
 /***************************************************************************************************************************/
 
 .loginSignup {
@@ -243,3 +246,44 @@ th, td {
     top: 16em;
     width: 100%;
 }
+/***************************************************************************************************************************/
+
+.userReviewPage{
+    display: block;
+    overflow: auto;
+}
+
+.userReviewPage .coverImg{
+    border-radius: 5px;
+    border-color: 5px lightyellow;
+    position: absolute;
+    top: 140px;
+    left: 250px;
+    width: 225px;
+    height: 332px;
+}
+
+.userReviewPage .animeInfo{
+    width: 750px;
+    height: 332px;
+    position: absolute;
+    top: 140px;
+    right: 175px;
+    border-spacing: 0;
+    min-width: 350px;
+}
+
+
+.userReviewPage .coverImg .animeInfo tr td{
+    font-size: 14px;
+}
+/*
+.userReviewPage p{
+    font-size: 18px;
+    position: fixed;
+    left :15px;
+    top :12em;
+    text-indent: 50px;
+    margin-left: 7.5em;
+    margin-right: 7.5em;
+}*/

@@ -24,42 +24,34 @@ function createThumb($row) {
    <?php
     $conn = OpenCon();
     $stmt = "SELECT * FROM article ORDER BY date DESC LIMIT 10";
-    
+    //Attempted to perform a username search
+    //$findUser = "SELECT username FROM user WHERE user.userID = article.userID ORDER BY date DESC LIMIT 10";
 
-    if($result = mysqli_query($conn, $stmt)){
+    if($result = mysqli_query($conn, $stmt /* && $result2 = mysqli_query($conn, $findUser)*/)){
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_array($result)){
+              //  $userSearch = mysqli_fetch_array($result2);
                 $link = "article.php/?q=" . $row['articleID'];
-                function firstSentence($content)
-                    {
-                        $pos = strpos($content, ".");
-
-                        if($pos === false)
-                            {
-                                return $content;
-                            }
-                        else
-                            {
-                                return substr($content, 0, $pos+1);
-                            }
-                    }
-            
                     echo "<div class = " . "RecentReviewShowsHere". ">";
                         echo "<table>";
                             echo "<tr>";
-                                echo "<th colspan =" ."2". ">Headline : ". "<a href=" . $link . ">" . $row['articleTitle'] . "</a></th>";
+                                echo "<td rowspan = 4> <img src=\"" . $row['imageURL']. "\" alt=\"Girl in a jacket\"> " ."</td>";
+                                echo "<td>Headline : ". "<a href=" . $link . ">" . $row['articleTitle'] . "</a></th>";
                             echo "</tr>";
                             echo "<tr>";
-                                echo "<td> <img src=\"" . $row['imageURL']. "\" alt=\"Girl in a jacket\"> " ."</td>";
                                 echo "<td> Anime Name : \n" . $row['animeName'] . "</td>";
                             echo "</tr>";
+                        /*    echo "<tr>";
+                                echo "<td>By : ". $userSearch['username'] . "</a></th>";
+                            echo "</tr>";  */                          
                             echo "<tr>";
-                                echo "<td colspan = " .  "2" . ">" . firstSentence($row['body']) ."...</td>";
+                                echo "<td colspan = " .  "2" . "> User Rating : " .  $row['starRating'] ."/5 </td>";
                             echo "</tr>";
                             echo "<tr>";
-                                echo "<td colspan = " .  "2" . ">" .  $row['starRating'] ."/5 </td>";
+                                echo "<td> Review : " . firstSentence($row['body']) ." <a href=" . $link . ">(See More)"."</a></td>";
                             echo "</tr>";
-                        echo "</table>";
+                        echo "</table><br>";
+                    echo "</div>";
             /*
                 echo "<th>Title/LinkToArticle</th>";
                 echo "<th>UserName</th>";

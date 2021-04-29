@@ -99,15 +99,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])){
 
 
     ?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<br><br><br><br><br><br><br><br>
 <div class = "loginSignup">
 <h1>Login as an Existing User</h1>
 
@@ -135,7 +127,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])){
                     echo "<p>Either Username or Password are incorrect</p>";
                 } 
         ?>
-<h3>New here? Click <a href = "//localhost:8000/signup.php">here </a> to sign-up!</h3>
+<h3>New here? Click <a href = "//localhost:8000/signup.php">here</a> to sign-up!</h3>
 </div>
 
 <!--
