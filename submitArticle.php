@@ -1,12 +1,13 @@
 <?php
 include 'dbo.php';
 include 'include.php';
-include "topbar.php";
 
+/*
 if($_SESSION['userID'] == ""){
 
   header("location: signup.php");
 }
+*/
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -37,7 +38,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-<!--
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,22 +58,24 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
    <script>
        
     </script>
--->
+
 </head>
 <body>
+<?php 
+include "topbar.php";
+?>
 
-<br><br><br><br><br>
 <input id='thistag' placeholder="Enter anime title" name="name"/>
 <button id="myBtn">Search</button>
 
 
-  <form action="" method="post" >
-    <p id="values"></p>
-    <p>Enter your article title</p>
-      <textarea name='title'></textarea>
-    <p>Enter your article body</p>
-      <textarea name='article'></textarea>
-    <input type="submit" name="submit" value="Submit" />
+<form action="" method="post" >
+<p id="values"></p>
+<p>Enter your article title</p>
+  <textarea name='title'></textarea>
+  <p>Enter your article body</p>
+  <textarea name='article'></textarea>
+  <input type="submit" name="submit" value="Submit" />
 
 
 
@@ -106,7 +109,6 @@ document.getElementById("myBtn").addEventListener("click", updateValue);
 
 function updateValue(e) {
     var text = document.getElementById('thistag').value;
-    alert('Call was successful');
 
     if(text.length > 2){
     var urlcall = 'submitSearchResults.php?q=' + text;
