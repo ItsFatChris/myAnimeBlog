@@ -18,6 +18,7 @@
                 $stmt->bind_param("s", $q);
                 $stmt->execute();
 
+
                 $result = $stmt->bind_result($articleID, $articleTitle, $userID, $animeID, $starRating,$body, $date, $imageURL, $animeName);
                 $stmt->fetch();
                 if($articleID != "")
@@ -30,6 +31,9 @@
                             echo "<tr>";
                                 echo "<td colspan = 2>Headline : " . $articleTitle . "</td>";
                             echo "</tr>";
+                            /*echo "<tr>";
+                                echo "<td colspan = 2>By : " . $username . "</td>";
+                            echo "</tr>";*/
                             echo "<tr>";
                                 echo "<td colspan = 2>Body : " .  nl2br($body). "</td>";
                             echo "</tr>";
@@ -48,6 +52,8 @@
                 else 
                     {
                         echo "<p>No results found</p>";
+                        $stmt->close();
+                        CloseCon($conn);
                     }
     
             } 
