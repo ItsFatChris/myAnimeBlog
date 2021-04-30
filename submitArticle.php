@@ -7,6 +7,7 @@ if($_SESSION['userID'] == ""){
 
   header("location: signup.php");
 }
+
 */
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
