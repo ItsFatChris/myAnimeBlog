@@ -1,12 +1,8 @@
 .body, html{
     height: 100%;
     margin: 0;
+    background-color: mediumpurple;
 }
-
-body {
-    background-color: lavender;
-}
-
 
 .bg{
     background-image: url("http://puu.sh/HBqqL/9fb742e477.jpg");
