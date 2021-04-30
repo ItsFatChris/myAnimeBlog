@@ -1,4 +1,4 @@
- html{
+html{
     height: 100%;
     margin: 0;
 }
@@ -318,6 +318,7 @@ th, td {
 }*/
 /***************************************************************************************************************************/
 
+/*
  .submitPage input{
     position: absolute;
     top:150px;
@@ -335,11 +336,11 @@ th, td {
 
  .submitPage form{
     position: absolute;
-    top:200px;
+    top:125px;
     margin-left: 50px;
 }
 
-
+*/
  .submitPage form p{
     font-family: Roboto;
     font-size: 16.5px;
@@ -350,7 +351,7 @@ th, td {
     width: 100%;
     height: 25px;
 }
-
+/*
 .submitPage form .articleTitle p{
     position: relative;
     top: 100px;
@@ -370,10 +371,10 @@ th, td {
     position: relative;
     top: 100px;
 }
+*/
+/*
  .submitPage form input{
-    position: relative;
-    left: 450px;
-    top: 170px;
+    
     width: 100px;
     height: 60px;
     border-radius: 5px;
@@ -383,7 +384,7 @@ th, td {
     font-family: Roboto;
     font-style: italic;
 }
-
+/*
 .submitPage form p#values div{
     height: 400px;
     width: 585px;
@@ -404,6 +405,7 @@ th, td {
 
 
 }
+
 .submitPage form p#values div p{
     width:100%;
     font-size: 30px;
@@ -412,7 +414,9 @@ th, td {
     font-style: italic;
     margin-left: 7px;
 }
+*/
 
+/*
 .submitPage form p#values div p input#op1{
     position: absolute;
     top: 170px;
@@ -430,4 +434,103 @@ th, td {
     position: absolute;
     top: 950px;
     left : 190px;
+}
+
+*/
+
+
+
+.submitPage {
+    margin: auto;
+    margin-top: 7.5%;
+  width: 90%;
+  border: 3px solid purple;
+  padding: 2%;
+}
+
+.submitPage form p{
+    font-family: Roboto;
+
+}
+
+.results{
+  text-align: center;
+  
+}
+
+.results div p {
+font-size: 30px;
+  
+  font-family: Roboto;
+  font-style: italic;
+}
+#article {
+    width: 100%;
+    height: 40%;
+  }
+
+#title{
+      width: 100%;
+  }
+
+#submit{
+  
+    margin-top: 5%;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    font-size: 24.5px;
+    font-family: Roboto;
+    font-style: italic;
+    
+}
+
+#buttonHolder {
+    text-align: center;
+}
+
+
+
+
+
+#r1 {
+    display:inline-block;
+    padding: 2.5%;
+    text-align: center;
+    
+}
+#r2{
+    display:inline-block;
+    padding: 2.5%;
+    
+}
+#r3{
+    display:inline-block;
+    padding: 2.5%;
+   
+}
+
+
+
+#values {
+    
+    text-align: center;
+}
+
+.description p, .articleTitle p{
+    padding-top: 2.5%;
+    padding-bottom: .5%;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+    padding: 1%;
+}
+
+.submitPage img {
+    padding-bottom: 2%;
 }

@@ -3,10 +3,12 @@ include 'dbo.php';
 include 'include.php';
 include "topbar.php";
 
+
 if($_SESSION['userID'] == ""){
 
   header("location: signup.php");
 }
+
 
 if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -71,14 +73,16 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class = "articleTitle">
     <p>Come up with a catchy Headline for your Review!</p>
-      <textarea name='title'></textarea>
+      <textarea id='title' name='title'></textarea>
     </div>
 
     <div class = "description">
     <p>Go in-depth! Explain why you feel the way you feel about this anime! No Spoilers!</p>
-      <textarea name='article'></textarea>
+      <textarea id='article' name='article'></textarea>
     </div>
-    <input type="submit" name="submit" value="Submit!" />
+    <div id='buttonHolder'>
+    <input id='submit' type="submit" name="submit" value="Submit!" />
+    </div>
 </div>
 
 
