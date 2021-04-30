@@ -1,8 +1,12 @@
-.body, html{
+ html{
     height: 100%;
     margin: 0;
-    background-color: mediumpurple;
 }
+
+body {
+    background-color: lavender;
+}
+
 
 .bg{
     background-image: url("http://puu.sh/HBqqL/9fb742e477.jpg");
@@ -107,14 +111,30 @@ h2 nav#secondaryNav ul li a{
 
 /***************************************************************************************************************************/
 
-table {
+
+.RecentReviewShowsHere table {
     width: 500px;
+    height: 210px;
+    max-height: 250px;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
     border-spacing: 0;
+    background-color: white;
     min-width: 350px;
+ 
 }
+
+.RecentReviewShowsHere table:hover{
+    box-shadow: 545px 250px solid black;
+    width: 545px;
+    height: 250px;
+    transition: width 600ms, height 1.5s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+
 table, th, td{
     border:1px solid darkorchid;
     border-collapse: collapse;
@@ -137,6 +157,7 @@ th, td {
     padding: 5px;
     font-size :18.5px;
     text-align: left;
+    font-family: Helvetica;
     padding: 5px;
 }
 
@@ -154,6 +175,13 @@ th, td {
 }
 
 
+.RecentReviewShowsHere table tbody tr td img:hover{
+    width: auto;
+    height: auto;
+    transition: width 600ms, height 1.5s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
 /***************************************************************************************************************************/
 
 .loginSignup {
@@ -288,3 +316,118 @@ th, td {
     margin-left: 7.5em;
     margin-right: 7.5em;
 }*/
+/***************************************************************************************************************************/
+
+ .submitPage input{
+    position: absolute;
+    top:150px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+
+ .submitPage button{
+    position: absolute;
+    top:149px;
+    left: 265px;
+    border-radius: 5px;
+}
+
+ .submitPage form{
+    position: absolute;
+    top:200px;
+    margin-left: 50px;
+}
+
+
+ .submitPage form p{
+    font-family: Roboto;
+    font-size: 16.5px;
+
+}
+
+.submitPage form textarea{
+    width: 100%;
+    height: 25px;
+}
+
+.submitPage form .articleTitle p{
+    position: relative;
+    top: 100px;
+}
+
+.submitPage form .articleTitle textarea{
+    position: relative;
+    top:100px;
+}
+
+.submitPage form .description p{
+    position: relative;
+    top: 100px;
+}
+
+.submitPage form .description textarea{
+    position: relative;
+    top: 100px;
+}
+ .submitPage form input{
+    position: relative;
+    left: 450px;
+    top: 170px;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    font-size: 24.5px;
+    font-family: Roboto;
+    font-style: italic;
+}
+
+.submitPage form p#values div{
+    height: 400px;
+    width: 585px;
+    border-radius: 5px;
+    border-color: black;
+    padding: 0px 7.5px 16px 7.5px;
+
+}
+
+.submitPage form p#values div img{
+    position: relative;
+    left: 30px;
+    width: 225px;
+    height: 317px;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 0px 7.5px 7.5px 7.5px;
+
+
+}
+.submitPage form p#values div p{
+    width:100%;
+    font-size: 30px;
+    line-height: 30.5px;
+    font-family: Roboto;
+    font-style: italic;
+    margin-left: 7px;
+}
+
+.submitPage form p#values div p input#op1{
+    position: absolute;
+    top: 170px;
+    left: 190px;
+
+}
+
+.submitPage form p#values div input#op2{
+    position: absolute;
+    top: 570px;
+    left: 190px;
+}
+
+.submitPage form p#values div input#op3{
+    position: absolute;
+    top: 950px;
+    left : 190px;
+}

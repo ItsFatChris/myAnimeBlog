@@ -59,21 +59,27 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
     </script>
 -->
 </head>
-<body>
 
-<br><br><br><br><br>
+
+<div class = "submitPage">
 <input id='thistag' placeholder="Enter anime title" name="name"/>
 <button id="myBtn">Search</button>
 
 
   <form action="" method="post" >
     <p id="values"></p>
-    <p>Enter your article title</p>
-      <textarea name='title'></textarea>
-    <p>Enter your article body</p>
-      <textarea name='article'></textarea>
-    <input type="submit" name="submit" value="Submit" />
 
+    <div class = "articleTitle">
+    <p>Come up with a catchy Headline for your Review!</p>
+      <textarea name='title'></textarea>
+    </div>
+
+    <div class = "description">
+    <p>Go in-depth! Explain why you feel the way you feel about this anime! No Spoilers!</p>
+      <textarea name='article'></textarea>
+    </div>
+    <input type="submit" name="submit" value="Submit!" />
+</div>
 
 
 
@@ -106,7 +112,6 @@ document.getElementById("myBtn").addEventListener("click", updateValue);
 
 function updateValue(e) {
     var text = document.getElementById('thistag').value;
-    alert('Call was successful');
 
     if(text.length > 2){
     var urlcall = 'submitSearchResults.php?q=' + text;
@@ -127,7 +132,5 @@ function updateValue(e) {
 );}
 }
 </script>
-</body>
 
 
-</html>
