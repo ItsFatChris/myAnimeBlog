@@ -50,11 +50,11 @@
                <?php
                 if($_SESSION["username"] != "")
                     {
-                      echo "<li><a href="."//localhost:8000/about.php" .">About Us</a>|<a href=". "//localhost:8000/submitArticle.php". ">Submit A Review</a>|<a href=//localhost:8000/logout.php> Log out</a></li>";
+                      echo "<li><a href="."//localhost:8000/search.php" .">Search</a>|<a href="."//localhost:8000/search.php" .">About Us</a>|<a href=". "//localhost:8000/submitArticle.php". ">Submit A Review</a>|<a href=//localhost:8000/logout.php> Log out</a></li>";
                     }
                 else 
                     {
-                        echo "<li><a href="."//localhost:8000/about.php" .">About Us</a>|<a href=". "//localhost:8000/submitArticle.php". ">Submit A Review</a></li>";
+                        echo "<li><a href="."//localhost:8000/search.php" .">Search</a>|<a href="."//localhost:8000/search.php" .">About Us</a>|<a href=". "//localhost:8000/submitArticle.php". ">Submit A Review</a></li>";
                     }
                ?>
             </ul>  

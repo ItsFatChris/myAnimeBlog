@@ -306,7 +306,7 @@ th, td {
 .userReviewPage .coverImg .animeInfo tr td{
     font-size: 14px;
 }
-/*
+
 .userReviewPage p{
     font-size: 18px;
     position: fixed;
@@ -315,7 +315,7 @@ th, td {
     text-indent: 50px;
     margin-left: 7.5em;
     margin-right: 7.5em;
-}*/
+}
 /***************************************************************************************************************************/
 
 /*
@@ -533,4 +533,13 @@ input[type=radio] {
 
 .submitPage img {
     padding-bottom: 2%;
+}
+
+#searchbar {
+    padding: 10%;
+}
+
+#searchResults {
+    margin-top: 10%;
+    text-align: center;
 }

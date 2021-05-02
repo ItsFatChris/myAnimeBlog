@@ -45,7 +45,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 
-
+<div id='searchbar'>
 <form action="" method="post" >
 <label for="fname">Search:</label>
 <input type="text" id="fname" name="fname">
@@ -56,6 +56,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 </form>
+</div>
 
 
 
